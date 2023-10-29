@@ -1,0 +1,40 @@
+.image {
+border-radius: 75px;
+overflow: hidden;
+background-color: rgb(179 179 179);
+padding-top: 10px;
+
+}
+
+span {
+display: block;
+
+}
+.name{
+font-weight: 700;
+font-size: 10px;
+margin-bottom: 4px;
+}
+
+.tag{
+margin-bottom: 4px;
+}
+
+/* ****************************************** */
+
+.list {
+display: flex;
+justify-content: space-between;
+margin-top: 12px;
+}
+
+.item{
+width: 0;
+flex: 1;
+border: 1px solid rgba(119, 118, 118, 0.284);;
+background-color: rgb(241, 247, 248);
+}
+
+.followers-text{
+font-weight: 700;
+}
