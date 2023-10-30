@@ -1,42 +1,25 @@
-import css from './statistics_section.module.css';
+import { StatisticsSection } from './statistics.styled';
 
 export const Statistics = ({ stats }) => {
   return (
-    <section className={css.section}>
-      <div className={css.statBlock}>
-        {stats.length > 0 && (
-          <h2
-            style={{
-              textAlign: 'center',
-              padding: '10px 0 10px 0',
-              backgroundColor: 'white',
-              fontWeight: 400,
-            }}
-          >
-            Upload stats
-          </h2>
-        )}
-        <ul className={css.statList}>
+    <StatisticsSection>
+      <div>
+        {stats.length > 0 && <h2>Upload stats</h2>}
+        <ul>
           {stats.map(stat => (
-            <li
-              className={css.statItem}
-              key={stat.id}
-              style={{ backgroundColor: getRandomColor() }}
-            >
-              <span className={css.statLabel}>{stat.label}</span>
-              <span className={css.statPercentage}>{stat.percentage}%</span>
+            <li key={stat.id} style={{ backgroundColor: getRandomHexColor() }}>
+              <span>{stat.label}</span>
+              <span>{stat.percentage}%</span>
             </li>
           ))}
         </ul>
       </div>
-    </section>
+    </StatisticsSection>
   );
 };
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
