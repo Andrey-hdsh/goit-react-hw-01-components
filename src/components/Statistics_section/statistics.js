@@ -1,10 +1,10 @@
 import { StatisticsSection } from './statistics.styled';
 
-export const Statistics = ({ stats }) => {
+export const Statistics = ({ stats , title }) => {
   return (
     <StatisticsSection>
       <div>
-        {stats.length > 0 && <h2>Upload stats</h2>}
+        {title && <h2>{title}</h2>}
         <ul>
           {stats.map(stat => (
             <li key={stat.id} style={{ backgroundColor: getRandomHexColor() }}>
